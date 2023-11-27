@@ -1,0 +1,53 @@
+<div class="container p-5 ">
+    <button style="margin-left: 80%;" type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">
+      AGREGAR
+    </button>
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Tipo de oferta</th>
+              <th scope="col">Descuento</th>
+              <th scope="col">Fecha de inicio</th>
+              <th scope="col">Fecha de fin</th>
+              <th scope="col">Producto</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let oferta of listOfertas">
+              <th scope="row">{{oferta.tipo_oferta}}</th>
+              <th >{{oferta.descuento}}</th>
+              <th >{{oferta.start_date}}</th>
+              <th >{{oferta.end_date}}</th>
+              <th >{{oferta.producto}}</th>
+             
+            </tr>
+          </tbody>
+        </table>
+  </div>
+  <div class="modal modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Agregar Oferta</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <form >
+              <input
+              class="form-control m-2"
+              type="text"
+              placeholder="Nombre de la categoria"
+              formControlName="nombre"
+              >
+              <button type="button" class="btn btn-primary"  >Guardar</button>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>

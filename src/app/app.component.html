@@ -1,0 +1,54 @@
+<ul style="background-color:#20242C;" class="nav shadow-sm justify-content-end text-center">
+    <li class="nav-item">
+        <a class="nav-link " aria-disabled="true" href="./carrito.html">
+            <div class="circulo-nav">
+                <img src="../assets/logo.png" alt="">
+            </div>
+        </a>
+    </li>
+    <li class="nav-item text-center">
+        <a class="nav-link  mt-3 " style="color: rgb(255, 254, 254);" href="">NOMBRE ADMIN</a>
+    </li>
+</ul>
+<div class="row">
+    <div style="height:120vh ;" class="col-3 shadow nav-vertical">
+        <div class="row mb-2 mt-5">
+            <div class="col">
+                <div class="circulo">
+                    <img class="logo" src="../assets/logo.png" alt="">
+                </div>
+            </div>
+            <div class="col text-center pt-3">
+                <h2>Shoes <br> Company</h2>
+            </div>
+        </div>
+        <a class="nav-btn" href="">
+            <img src="../assets/tienda.png" alt="">
+            INICIO
+        </a>
+        <a class="nav-btn" routerLink="productos">
+            <img src="../assets/pedido.png" alt="">
+            PRODUCTOS</a>
+         <a class="nav-btn" href="">
+            <img src="../assets/pedido.png" alt="">
+            PEDIDOS</a>
+        <a class="nav-btn" href=""  routerLink="categorias">
+            <img src="../assets/pedido.png">
+            CATEGORIAS</a>
+        <a class="nav-btn" href="" routerLink="ofertas">
+            <img src="../assets/pedido.png" alt="">
+            OFERTAS</a>
+        <a class="nav-btn" href="">
+            <img src="../assets/pedido.png" alt="">
+            CUPONES</a>
+        <a class="nav-btn" href="">
+            <img src="../assets/informe.png" alt="">
+            PQRS</a>
+        <a  class="nav-btn btn-salir" href="">
+            <img src="../assets/salida-de-emergencia.png" alt="">
+            SALIR</a>
+    </div>
+    <div style="height: 100vh; overflow: auto;" class="col-9 shadow-sm text-center ">
+        <router-outlet></router-outlet>
+    </div>
+</div>
