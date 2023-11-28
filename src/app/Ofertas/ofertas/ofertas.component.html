@@ -10,16 +10,21 @@
               <th scope="col">Fecha de inicio</th>
               <th scope="col">Fecha de fin</th>
               <th scope="col">Producto</th>
+              <th scope="col">Opciones</th>
               
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let oferta of listOfertas">
-              <th scope="row">{{oferta.tipo_oferta}}</th>
+              <th scope="row">{{oferta.tipo}}</th>
               <th >{{oferta.descuento}}</th>
-              <th >{{oferta.start_date}}</th>
-              <th >{{oferta.end_date}}</th>
+              <th >{{oferta.fecha_inicio}}</th>
+              <th >{{oferta.fecha_fin}}</th>
               <th >{{oferta.producto}}</th>
+              <th >
+                <button class="btn btn-warning btn-sm m-1">Editar</button>
+                <button class="btn btn-danger btn-sm m-1">Eliminar</button>
+              </th>
              
             </tr>
           </tbody>
@@ -34,14 +39,36 @@
         </div>
         <div class="modal-body">
           <div class="row">
-            <form >
+            <form [formGroup]="fmrOferta" >
               <input
               class="form-control m-2"
               type="text"
-              placeholder="Nombre de la categoria"
-              formControlName="nombre"
+              placeholder="Tipo de oferta "
+              formControlName="tipo"
               >
-              <button type="button" class="btn btn-primary"  >Guardar</button>
+              <input
+              class="form-control m-2"
+              type="text"
+              placeholder="Cuanto sera el descuento"
+              formControlName="descuento"
+              >
+              <input
+              class="form-control m-2"
+              type="date"
+              placeholder="Fecha de inicio de la oferta "
+              formControlName="fechaInicio"
+              >
+              <input
+              class="form-control m-2"
+              type="date"
+              placeholder="Fecha del fin de la oferta"
+              formControlName="fechaFin"
+              >
+              <select formControlName="producto" class="form-select m-2" aria-label="Default select example">
+                <option selected>Seleciona una opción</option>
+                <option *ngFor="let producto of listProductos" [value]="producto.id">{{producto.nombre_producto}}</option>
+              </select>
+              <button type="button" class="btn btn-primary" (click)="guardar()" >Guardar</button>
             </form>
           </div>
         </div>

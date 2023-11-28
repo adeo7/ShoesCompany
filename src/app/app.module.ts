@@ -11,13 +11,15 @@ import { ToastrModule } from 'ngx-toastr';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { CategoriaIndexComponent } from './categoria/categoria-index/categoria-index.component';
 import { OfertasComponent } from './Ofertas/ofertas/ofertas.component';
+import { TallaComponent } from './tallas/talla/talla.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductosIndexComponent,
     CategoriaIndexComponent,
-    OfertasComponent
+    OfertasComponent,
+    TallaComponent
   ],
   imports: [
     BrowserModule,
