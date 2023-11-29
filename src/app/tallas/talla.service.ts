@@ -15,13 +15,12 @@ export class TallaService {
    getAll() {
     return this.Http.get<any>(this.urlBase,{ headers :this.httpHeader })
   }
-  save(data:any,id:any) {
-    if (id!=undefined ) {
-      return this.Http.put<any>(this.urlBase + '/'+ id,data,{headers :this.httpHeader})  
-    }else{
-      return this.Http.post<any>(this.urlBase,data,{headers :this.httpHeader})
-    }
+  save(data:any) {
+    return this.Http.post<any>(this.urlBase,data,{headers :this.httpHeader})
    
+  }
+  update(data:any,id:any) {
+    return this.Http.put<any>(this.urlBase + '/'+ id,data,{headers :this.httpHeader}) 
   }
 
   getById(id:number) {

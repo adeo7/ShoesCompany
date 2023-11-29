@@ -16,7 +16,7 @@ export class ProductosService {
     return this.Http.get<any>(this.urlBase,{ headers :this.httpHeader })
   }
   save(data:any,id:any) {
-    if (id!=undefined ) {
+    if (id!=0 ) {
       return this.Http.put<any>(this.urlBase + '/'+ id,data,{headers :this.httpHeader})  
     }else{
       return this.Http.post<any>(this.urlBase,data,{headers :this.httpHeader})

@@ -45,41 +45,51 @@
             placeholder="Nombre del producto"
             formControlName="nombre"
             >
+
             <input type="text"
             class="form-control m-2"
-            type="text"
+            type="number"
             placeholder="precio del producto"
             formControlName="precio"
             >
+
             <input type="text"
             class="form-control m-2"
             type="text"
             placeholder="color del producto"
             formControlName="color"
             >
+            <select class="form-select m-2" aria-label="Default select example"  formControlName="genero">
+              <option selected>Seleciona una opción</option>
+              <option value="F">Femeninos</option>
+              <option value="M">Masculinos</option>
+              <option value="U">Unisex</option>
+            </select>
+
             <input type="text"
             class="form-control m-2"
             type="text"
             placeholder="Marca del producto"
             formControlName="marca"
             >
-            <select class="form-select m-2" aria-label="Default select example">
+
+            <select class="form-select m-2" aria-label="Default select example"  formControlName="categoria">
               <option selected>Seleciona una opción</option>
               <option *ngFor="let categoria of listCategoria" [value]="categoria.id">{{categoria.categoria}}</option>
             </select>
+
+            <select class="form-select m-2" aria-label="Default select example"  formControlName="talla">
+              <option selected>Seleciona una talla</option>
+              <option *ngFor="let talla of listTalla" [value]="talla.id">{{talla.talla}}</option>
+            </select>
+
             <input type="text"
             class="form-control m-2"
-            type="text"
-            placeholder="Talla del producto"
-            formControlName="talla"
-            >
-            <input type="text"
-            class="form-control m-2"
-            type="text"
+            type="number"
             placeholder="Cantidad disponible del producto"
             formControlName="disponibles"
             >
-            <button type="button" class="btn btn-primary">Guardar Cambios</button>
+            <button type="button" class="btn btn-primary" (click)="guardar()">Guardar Cambios</button>
           </form>
         </div>
       </div>
